@@ -11,7 +11,9 @@ apple = randrange(0, RES, SIZE), randrange(0, RES, SIZE)
 length = 1
 snake = [(x,y)]
 dx, dy = 0, 0
+#fps
 fps = 10
+#player score
 score = 0
 
 
@@ -20,6 +22,7 @@ pygame.init()
 sc = pygame.display.set_mode([RES,RES])
 clock = pygame.time.Clock()
 pygame.display.set_caption('Snakegame')
+# Font for score and endgame
 font_score = pygame.font. SysFont('Times New Roman', 26, bold = True)
 font_endgame = pygame.font. SysFont('Arial', 66, bold = True)
 bg = pygame.image.load('1.jpg').convert()
@@ -56,7 +59,8 @@ while True:
                     exit()
 
 
-    pygame.display.flip()git
+    pygame.display.flip()
+    clock.tick(fps)
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
